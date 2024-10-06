@@ -95,15 +95,19 @@ void prompt() {
             break;
         case '1':
             calculate(0.0,add_numbers);
+            prompt();
             break;
         case '2':
             calculate(1.0,multiply_numbers);
+            prompt();
             break;
         case '3':
             calculate(1.0,divide_numbers);
+            prompt();
             break;
         default:
             printf("unimplemented\n");
+            prompt();
             exit(0);
     }
 }
