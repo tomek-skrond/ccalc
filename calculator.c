@@ -18,7 +18,7 @@ void calculate(double initial, void (*func_passed)(double*,size_t)) {
 
     int i = 0;
     while (i < numbers_size) {
-        printf("Reading numbers (to stop reading insert 'x')");
+        printf("Reading numbers (to stop reading insert 'x'): ");
         char input;
         scanf("%s",&input);
 
@@ -49,7 +49,7 @@ void add_numbers(double* array, size_t array_size) {
         sum += array[i];
     }
 
-    printf("Sum of all numbers: %f",sum);
+    printf("Sum of all numbers: %f\n",sum);
 }
 
 void multiply_numbers(double* array, size_t array_size) {
@@ -61,7 +61,7 @@ void multiply_numbers(double* array, size_t array_size) {
         multiplied *= array[i];
     }
 
-    printf("All numbers multiplied: %f",multiplied);
+    printf("All numbers multiplied: %f\n",multiplied);
 
 }
 
@@ -72,7 +72,7 @@ void divide_numbers(double* array, size_t array_size) {
         divided /= array[i];
     }
 
-    printf("All numbers divided: %f",divided);
+    printf("All numbers divided: %f\n",divided);
 }
 
 void prompt() {
@@ -83,27 +83,28 @@ void prompt() {
     printf("3. divide any numbers\n");
     printf("Number limit: %d\n",50);
     
-    int action;
+    char action;
     printf("Input option: ");
-    scanf("%d",&action);
+    scanf("%s",&action);
     printf("\n");
 
     switch (action) {
-        case 0:
+        case '0':
             printf("Exiting\n");
             exit(0);
             break;
-        case 1:
+        case '1':
             calculate(0.0,add_numbers);
             break;
-        case 2:
+        case '2':
             calculate(1.0,multiply_numbers);
             break;
-        case 3:
+        case '3':
             calculate(1.0,divide_numbers);
             break;
         default:
-            printf("unimplemented");
+            printf("unimplemented\n");
+            exit(0);
     }
 }
 
